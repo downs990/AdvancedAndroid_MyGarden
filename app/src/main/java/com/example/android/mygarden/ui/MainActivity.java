@@ -16,18 +16,19 @@ package com.example.android.mygarden.ui;
 * limitations under the License.
 */
 
+import android.app.LoaderManager;
+import android.content.CursorLoader;
 import android.content.Intent;
+import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.android.mygarden.R;
 
@@ -57,7 +58,7 @@ public class MainActivity
         mAdapter = new PlantListAdapter(this, null);
         mGardenRecyclerView.setAdapter(mAdapter);
 
-        getSupportLoaderManager().initLoader(GARDEN_LOADER_ID, null, this);
+        getLoaderManager().initLoader(GARDEN_LOADER_ID, null, this);
     }
 
     @Override
