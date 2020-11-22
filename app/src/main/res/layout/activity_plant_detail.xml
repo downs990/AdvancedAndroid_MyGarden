@@ -16,7 +16,7 @@
     limitations under the License.
 -->
 
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -34,43 +34,51 @@
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1"
         app:layout_constraintLeft_toLeftOf="parent">
-        <include layout="@layout/plant_age" />
+
     </RelativeLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
         android:layout_margin="4dp"
-        app:layout_constraintTop_toBottomOf="@id/plant_age"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/since_planted"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/include4"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintLeft_toLeftOf="@id/plant_age"
         app:layout_constraintRight_toRightOf="@id/plant_age"
-        android:text="@string/since_planted"/>
-
+        app:layout_constraintStart_toStartOf="@+id/include4"
+        app:layout_constraintTop_toBottomOf="@+id/include4" />
 
     <RelativeLayout
         android:id="@+id/water_meter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1"
         app:layout_constraintLeft_toRightOf="@+id/plant_age"
         app:layout_constraintRight_toRightOf="parent">
-        <include layout="@layout/water_meter" />
+
     </RelativeLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
         android:layout_margin="4dp"
-        app:layout_constraintTop_toBottomOf="@id/water_meter"
+        android:text="@string/since_watered"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/include5"
+        app:layout_constraintHorizontal_bias="0.324"
         app:layout_constraintLeft_toLeftOf="@id/water_meter"
         app:layout_constraintRight_toRightOf="@id/water_meter"
-        android:text="@string/since_watered"/>
-
-
+        app:layout_constraintStart_toStartOf="@+id/include5"
+        app:layout_constraintTop_toBottomOf="@+id/include5" />
 
     <ImageView
         android:layout_marginTop="16dp"
@@ -99,7 +107,7 @@
 
 
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,7 +118,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/water_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -122,7 +130,7 @@
         app:layout_constraintLeft_toRightOf="@+id/back_button"
         app:layout_constraintRight_toLeftOf="@+id/reset_button" />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -133,4 +141,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+    <include
+        android:id="@+id/include4"
+        layout="@layout/plant_age"
+        android:layout_width="89dp"
+        android:layout_height="103dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/include5"
+        layout="@layout/water_meter"
+        android:layout_width="126dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
