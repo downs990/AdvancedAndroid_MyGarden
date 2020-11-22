@@ -39,7 +39,7 @@ public class PlantWateringService extends IntentService {
 
     // TODO (1): Change ACTION_WATER_PLANTS to ACTION_WATER_PLANT and
     // use EXTRA_PLANT_ID to pass the plant ID to the service and update the query to use SINGLE_PLANT_URI
-    public static final String ACTION_WATER_PLANTS = "com.example.android.mygarden.action.water_plants";
+    public static final String ACTION_WATER_PLANT = "com.example.android.mygarden.action.water_plants";
     public static final String ACTION_UPDATE_PLANT_WIDGETS = "com.example.android.mygarden.action.update_plant_widgets";
 
     public PlantWateringService() {
@@ -54,7 +54,7 @@ public class PlantWateringService extends IntentService {
      */
     public static void startActionWaterPlants(Context context) {
         Intent intent = new Intent(context, PlantWateringService.class);
-        intent.setAction(ACTION_WATER_PLANTS);
+        intent.setAction(ACTION_WATER_PLANT);
         context.startService(intent);
     }
 
@@ -77,7 +77,7 @@ public class PlantWateringService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         if (intent != null) {
             final String action = intent.getAction();
-            if (ACTION_WATER_PLANTS.equals(action)) {
+            if (ACTION_WATER_PLANT.equals(action)) {
                 handleActionWaterPlants();
             } else if (ACTION_UPDATE_PLANT_WIDGETS.equals(action)) {
                 handleActionUpdatePlantWidgets();
