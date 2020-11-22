@@ -16,18 +16,19 @@ package com.example.android.mygarden.ui;
 * limitations under the License.
 */
 
+import android.app.LoaderManager;
 import android.content.ContentUris;
 import android.content.ContentValues;
+import android.content.CursorLoader;
+import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.content.CursorLoader;
-import android.support.v4.content.Loader;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.android.mygarden.PlantWateringService;
 import com.example.android.mygarden.R;
@@ -50,7 +51,7 @@ public class PlantDetailActivity extends AppCompatActivity
         setContentView(R.layout.activity_plant_detail);
         mPlantId = getIntent().getLongExtra(EXTRA_PLANT_ID, PlantContract.INVALID_PLANT_ID);
         // This activity displays single plant information that is loaded using a cursor loader
-        getSupportLoaderManager().initLoader(SINGLE_LOADER_ID, null, this);
+        getLoaderManager().initLoader(SINGLE_LOADER_ID, null, this);
     }
 
     public void onBackButtonClick(View view) {
